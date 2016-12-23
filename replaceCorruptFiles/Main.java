@@ -12,7 +12,7 @@ import java.util.Scanner;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 public class Main {
-
+	//class write for linux only
 	public static void main(String[] args){
 		Main main = new Main();
 		main.run();
@@ -24,12 +24,11 @@ public class Main {
 		
 		LsRepMini ls = new LsRepMini();
 
-		System.out.println("dossier 1");
+		System.out.println("entrer le dossier 1");
 		Scanner keyboard = new Scanner(System.in);
-		System.out.println("dossier 2");
 		String a = keyboard.next();
 		Scanner keyboard2 = new Scanner(System.in);
-
+		System.out.println("entrer le dossier 2");
 		String b = keyboard2.next();
 		ArrayList<File> fichierARelative = ls.getRelativeFile(a);
 		ArrayList<File> fichierBRelative = ls.getRelativeFile(b);
@@ -49,7 +48,7 @@ public class Main {
 	
 	private void remplacerFile(File f,ArrayList<File> b) {
 		for(File ff : b){
-			if(ff.length()>0 && ff.toString().substring(ff.toString().indexOf("/")).equals(f.toString().substring(f.toString().indexOf("/")))){
+			if(ff.length()>0 && ff.toString().substring(ff.toString().indexOf("/")).equals(f.toString().substring(f.toString().indexOf("/")))){// a modifier pour windows
 				try{
 					System.out.println("copie en cour");
 				copy(ff,f);
